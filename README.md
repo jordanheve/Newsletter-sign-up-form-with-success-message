@@ -19,7 +19,7 @@ Users should be able to:
 
 ![](./assets/images/screenshot.png)
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Add live site URL here](https://jordanheve.github.io/Newsletter-sign-up-form-with-success-message/)
 
 
 ### Built with
