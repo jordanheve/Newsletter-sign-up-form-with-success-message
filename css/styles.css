@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --Tomato: hsl(4, 100%, 67%);
+    --Magenta: hsl(346,100%,66%);
+    --Light-Tomato: hsl(4, 100%, 97%);
+    --Dark-Slate-Grey: hsl(234, 29%, 20%);
+    --Charcoal-Grey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--Charcoal-Grey);
+    min-height: 100vh;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: var(--Dark-Slate-Grey);
+}
+
+.main-container {
+    padding: 1.5rem;
+    background-color: var(--White);
+    border-radius: 2rem;
+}
+
+body, .section-form, .form-container, .form, .section-success, .success-msg {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.section-form {
+    flex-direction: row;
+    gap: 2rem;
+    max-width: 55rem;
+}
+
+.header {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 3.5rem;
+    margin-bottom: -.5rem;
+}
+
+.paragraph {
+    line-height: 1.5rem
+}
+
+.ul-list {
+    margin-top: -.5rem;
+}
+
+.ul-list .li-element {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: .8rem;
+    gap: 1rem;
+}
+
+.icon-list {
+    content: url(../assets/images/icon-list.svg);
+}
+
+.form-container {
+    margin: 2rem;
+    gap: 2rem
+}
+
+.input-email, .submit-btn, .dismiss-btn {
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+    border-radius: .5rem;
+}
+
+.input-email {
+    border: 1px solid var(--Grey);
+    color: var(--Dark-Slate-Grey);
+    margin-bottom: 1.5rem;
+}
+
+.input-email.invalid {
+    background-color: var(--Light-Tomato);
+    border-color: var(--Tomato);
+    outline-color: var(--Tomato);
+}
+
+.input-email.invalid::placeholder{
+   color: var(--Tomato);
+   opacity: .9;
+}
+
+.email-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+    font-weight: 700;
+    font-size: .8rem;
+}
+
+.label-alert {
+    color: var(--Tomato);
+    visibility: hidden;
+    opacity: 0;
+    transition: ease-in .5s;
+}
+
+.label-alert.active {
+    visibility: visible;
+    animation: buzzing .7s;
+    opacity: 1;
+}
+
+.submit-btn, .dismiss-btn {
+    border: none;
+    background: var(--Dark-Slate-Grey);
+    color: var(--White);
+    font-weight: 700;
+    font-size: .9rem;
+}
+
+.submit-btn:hover, .dismiss-btn:hover {
+    cursor: pointer;
+    background: linear-gradient( to right,var(--Magenta), var(--Tomato)) ;
+    box-shadow: 0 .4rem 1rem var(--Tomato);
+}
+
+.section-success {
+    max-width: 24rem;
+    gap: 2rem;
+    margin: 2rem;
+}
+
+.success-msg {
+    gap: 2rem;
+}
+
+.icon-success {
+    content: url(../assets/images/icon-success.svg);
+    max-width: 4rem;
+    max-height: 4rem;
+}
+
+.email-sent {
+    font-weight: 700;
+}
+
+.hidden {
+    display: none;
+    scale: 0;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 1rem;
+    text-align: center;
+    color: var(--White);
+}
+
+.attribution a {
+    text-decoration: none;
+    color: var(--Magenta)
+}
+
+@keyframes buzzing {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(5px) rotateZ(-5deg); }
+    50% { transform: translateX(-5px) rotateZ(5deg); }
+    75% { transform: translateX(5px) rotateZ(-5deg); }
+    100% { transform: translateX(0); }
+  }
+
+@media (max-width: 576px) {
+
+    .main-container {
+        border-radius: 0;
+        padding: 0;
+        min-height: 100vh;
+        max-width: 100vw;
+    }
+
+    .section-form {
+        flex-direction: column-reverse;
+        gap: 0rem;
+    }
+
+    .form-container {
+        margin: 1.5rem;
+    }
+    
+    .background-img {
+        content: url(../assets/images/illustration-sign-up-mobile.svg);
+        width: 100%;
+    }
+
+    .header {
+        font-size: 2.6rem;
+    }
+
+    .section-success {
+        justify-content: space-around;
+        height: 100vh;
+        max-width: 100vw;
+        margin: 0 1.5rem;
+    }
+
+    .attribution {
+        background-color: var(--White);
+        position: static;
+        width: 100%;
+        color: var(--Grey)
+    }
+  }
